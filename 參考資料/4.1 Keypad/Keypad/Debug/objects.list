@@ -1,0 +1,6 @@
+"src/7seg.o"
+"src/helper_functions.o"
+"src/keypad.o"
+"src/main.o"
+"startup/startup_stm32.o"
+"startup/sysmem.o"
