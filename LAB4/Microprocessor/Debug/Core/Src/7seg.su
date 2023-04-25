@@ -1,9 +1,0 @@
-../Core/Src/7seg.c:6:5:init_7seg	32	static
-../Core/Src/7seg.c:37:6:send_7seg	40	static
-../Core/Src/7seg.c:72:5:display_number	40	static
-../Core/Src/7seg.c:91:17:add	32	static
-../Core/Src/7seg.c:97:17:sub	32	static
-../Core/Src/7seg.c:103:17:mul	40	static
-../Core/Src/7seg.c:111:17:div	40	static
-../Core/Src/7seg.c:115:17:calc	2144	static
-../Core/Src/7seg.c:167:6:display_fraction	72	static
