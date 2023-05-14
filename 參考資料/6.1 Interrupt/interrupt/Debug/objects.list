@@ -1,0 +1,8 @@
+"src/7seg.o"
+"src/helper_functions.o"
+"src/keypad.o"
+"src/led_button.o"
+"src/main.o"
+"src/timer.o"
+"startup/startup_stm32.o"
+"startup/sysmem.o"
