@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "Final_project",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"helper_functions.h": "c",
+			"stm32l476xx.h": "c",
+			"timer.h": "c",
+			"stm32l4xx_hal_gpio.h": "c",
+			"cstddef": "c",
+			"string": "c",
+			"stdio.h": "c",
+			"string.h": "c",
+			"7seg.h": "c",
+			"max7219.h": "c",
+			"led_button.h": "c"
+		}
+	}
+}
