@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "STM32",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"helper_functions.h": "c",
+			"timer.h": "c",
+			"keypad.h": "c",
+			"7seg.h": "c",
+			"stm32l476xx.h": "c",
+			"led_button.h": "c",
+			"stdio.h": "c",
+			"stm32l4xx_hal_tim.h": "c",
+			"stm32l4xx_hal_uart.h": "c",
+			"cstdio": "c",
+			"string.h": "c",
+			"errno.h": "c",
+			"rcc.h": "c"
+		}
+	}
+}
