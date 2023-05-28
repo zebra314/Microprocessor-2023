@@ -34,7 +34,7 @@ int init_max7219(GPIO_TypeDef *gpio, int DIN, int CS, int CLK)
     // Set Decode Mode to non-decode mode
     send_max7219(gpio, DIN, CS, CLK, MAX_ADDRESS_DECODE_MODE, 0x00);
     // Set Intensity to 0x05
-    send_max7219(gpio, DIN, CS, CLK, MAX_ADDRESS_ITENSITY, 0x05);
+    send_max7219(gpio, DIN, CS, CLK, MAX_ADDRESS_ITENSITY, 0x01);
     // Set Scan Limit 
     send_max7219(gpio, DIN, CS, CLK, MAX_ADDRESS_SCAN_LIMIT, 0x07);
     // Wakeup max7219

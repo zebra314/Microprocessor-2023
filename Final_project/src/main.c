@@ -32,7 +32,6 @@ void SysTick_Handler() {
 }
 
 int myfont[][8]={
-		{0x00000001,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000, }, //0
 		{0x20>>2,0x60>>2,0x20>>2,0x20>>2,0x20>>2,0x20>>2,0x20>>2,0x70>>2}, //1
 		{0x70>>2,0x88>>2,0x08>>2,0x10>>2,0x20>>2,0x40>>2,0x80>>2,0xF8>>2}, //2
 		{0x70>>2,0x88>>2,0x08>>2,0x30>>2,0x08>>2,0x08>>2,0x88>>2,0x70>>2}, //3
@@ -82,14 +81,14 @@ int main()
 	}
 
 	// Configure SysTick clk to 10 Mhz and interrupt every 0.4s
-	SystemClock_Config_Interrupt(10, 4000000);
+	SystemClock_Config_Interrupt(10, 10000000);
 
     while(1) {
 		// for(int j = 0; j<36; j++){
 			for(int i=0; i<8; i++){
-				send_max7219(MAX7219_gpio, MAX7219_DIN, MAX7219_CS, MAX7219_CLK, i, myfont[0][i]);
+				send_max7219(MAX7219_gpio, MAX7219_DIN, MAX7219_CS, MAX7219_CLK, i+1, myfont[8][i]);
 			}
-			delay_without_interrupt(300);
+			// delay_without_interrupt(1000);
 		// }
 
     }
