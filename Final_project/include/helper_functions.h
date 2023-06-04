@@ -3,8 +3,16 @@
 
 #include "stm32l476xx.h"
 
-#define abs(x) (((x) < 0) ? (-(x)) : (x))
+// Define pins for led (default use on-board led PA5)
+#define LED_gpio GPIOA
+#define LED_pin_1 5
+#define LED_layer_4 10
+#define LED_layer_5 9
+#define LED_layer_3 6
+#define LED_layer_2 7
+#define LED_layer_1 8
 
+void choose_layer(GPIO_TypeDef* gpio, int pin);
 int read_gpio(GPIO_TypeDef* gpio, int pin);
 void write_gpio(GPIO_TypeDef* gpio, int pin, int data);
 void set_gpio(GPIO_TypeDef* gpio, int pin);

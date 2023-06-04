@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "Final_project",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"animation.h": "c",
+			"max7219.h": "c",
+			"helper_functions.h": "c",
+			"*.tcc": "c",
+			"chrono": "c",
+			"complex": "c",
+			"cmath": "c",
+			"random": "c",
+			"istream": "c",
+			"limits": "c",
+			"memory": "c",
+			"ostream": "c",
+			"streambuf": "c",
+			"tuple": "c",
+			"numeric": "c",
+			"system_error": "c",
+			"stm32l476xx.h": "c"
+		}
+	}
+}

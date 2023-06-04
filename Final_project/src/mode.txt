@@ -1,7 +1,7 @@
-parade or scan mode 
+check : parade or scan mode 
 emission mode
 wave mode
-random mode
+check : random mode
 snake mode
 rotate number
 heat beat mode

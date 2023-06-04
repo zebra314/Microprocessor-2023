@@ -1,6 +1,5 @@
 #include "max7219.h"
 #include "helper_functions.h"
-
 int init_max7219(GPIO_TypeDef *gpio, int DIN, int CS, int CLK)
 {
     // Enable AHB2 Clock
@@ -34,7 +33,7 @@ int init_max7219(GPIO_TypeDef *gpio, int DIN, int CS, int CLK)
     // Set Decode Mode to non-decode mode
     send_max7219(gpio, DIN, CS, CLK, MAX_ADDRESS_DECODE_MODE, 0x00);
     // Set Intensity to 0x05
-    send_max7219(gpio, DIN, CS, CLK, MAX_ADDRESS_ITENSITY, 0x01);
+    send_max7219(gpio, DIN, CS, CLK, MAX_ADDRESS_ITENSITY, 0xFF);
     // Set Scan Limit 
     send_max7219(gpio, DIN, CS, CLK, MAX_ADDRESS_SCAN_LIMIT, 0x07);
     // Wakeup max7219
@@ -84,38 +83,5 @@ void send_max7219(GPIO_TypeDef *gpio, int DIN, int CS, int CLK, int address, int
     return;
 }
 
-void write_byte(GPIO_TypeDef *gpio, int DIN, int CS, int CLK, uint8_t byte)
-{
-    // write byte
-    for (int i = 0; i < 8; i++)
-    {
-        // Reset CLK when enter
-        reset_gpio(gpio, CLK);
 
-        write_gpio(gpio, DIN, byte & 0x80); // write the MSB bit to the data pin
-        byte = byte << 1;                   // shift left
 
-        set_gpio(gpio, CLK); // set the clock pin HIGH
-    }
-}
-
-void write_matrix(GPIO_TypeDef *gpio, int DIN, int CS, int CLK, uint8_t address, uint8_t data)
-{
-    reset_gpio(gpio, CS); // pull the CS pin LOW
-    write_byte(gpio, DIN, CS, CLK, address);
-    write_byte(gpio, DIN, CS, CLK, data);
-    set_gpio(gpio, CS); // pull the CS pin HIGH
-}
-
-void write_string(GPIO_TypeDef *gpio, int DIN, int CS, int CLK, char *str, int8_t led_array[][8])
-{
-    while (*str)
-    {
-        for (int i = 1; i < 9; i++)
-        {
-            write_matrix(gpio, DIN, CS, CLK, i, led_array[(*str - 55)][i - 1]);
-        }
-        str++;
-        delay_without_interrupt(500);
-    }
-}

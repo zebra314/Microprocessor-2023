@@ -21,6 +21,25 @@ void toggle_output(GPIO_TypeDef* gpio, int pin){
 	}
 }
 
+void choose_layer(GPIO_TypeDef* gpio, int layer){
+	reset_gpio(LED_gpio, LED_layer_1);
+	reset_gpio(LED_gpio, LED_layer_2);
+	reset_gpio(LED_gpio, LED_layer_3);
+	reset_gpio(LED_gpio, LED_layer_4);
+	reset_gpio(LED_gpio, LED_layer_5);
+	if(layer == 1){
+		set_gpio(LED_gpio, LED_layer_1);
+	}else if(layer == 2){
+		set_gpio(LED_gpio, LED_layer_2);
+	}else if(layer == 3){
+		set_gpio(LED_gpio, LED_layer_3);
+	}else if(layer == 4){
+		set_gpio(LED_gpio, LED_layer_4);
+	}else if(layer == 5){
+		set_gpio(LED_gpio, LED_layer_5);
+	}
+}
+
 void FPU_init(){
 	// Setup FPU
 	SCB->CPACR |= (0xF << 20);
@@ -56,3 +75,4 @@ int gcd(int a, int b){
 int lcm(int a, int b){
 	return a / gcd(a, b) * b;
 }
+
